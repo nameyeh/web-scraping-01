@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/darkly/bootstrap.min.css">
+</head>
+
+    
+    
+    
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1><br>
+      <p><a class="btn btn-primary btn-lg btn-block" href="http://127.0.0.1:5000/scrape" role="button">Click Here to Scrape Latest Data</a></p>
+      
+    </div>
+
+    <!-- Scraped Data -->
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="heading"><b>Latest Mars News Headline</b></h3><br>
+            <p style="font-size:20px"><b>{{data_outputs.title}}</b>
+                <br>
+            {{data_outputs.paragraph}}</p>
+        </div>
+    </div>
+      <br>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="content_title">
+                <h3><b>Featured Mars Image</b></h3>
+                <br>
+                <br>
+            </div>
+            <a href={{data_outputs.featured_image_url}}>
+                <img width=620 src={{data_outputs.featured_image_url}}>
+            </a>
+        </div>
+        <div class="col-md-5">
+            <p style="border: 1px solid #000; padding:2%; font-size:20px"><b>Current Weather on Mars</b>
+            <br>
+            {{data_outputs.mars_weather}}
+            </p>
+            <br>
+            <p style="font-size:25px"><b>Mars Facts</b>
+            <br>
+            <table>    
+                {{data_outputs.html_table | safe}}
+            </table>
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h3 align="center"><b>Mars Hemispheres</b></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <p align="center"; style="padding:2%">
+                <a href={{data_outputs.hemisphere_img_dict[0].img_url}}>
+                    <img width=500 src={{data_outputs.hemisphere_img_dict[0].img_url}}>
+                </a>
+                <div class="content_title"; align="center">
+                    <h4><b>{{data_outputs.hemisphere_img_dict[0].title}}</b></h4>
+                </div>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <p align="center"; style="padding:2%">
+                <a href={{data_outputs.hemisphere_img_dict[1].img_url}}>
+                    <img width=500 src={{data_outputs.hemisphere_img_dict[1].img_url}}>
+                </a>
+                <div class="content_title"; align="center">
+                    <h4><b>{{data_outputs.hemisphere_img_dict[1].title}}</b></h4>
+                </div>
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <p align="center"; style="padding:2%">
+                <a href={{data_outputs.hemisphere_img_dict[2].img_url}}>
+                    <img width=500 src={{data_outputs.hemisphere_img_dict[2].img_url}}>
+                </a>
+                <div class="content_title"; align="center">
+                    <h4><b>{{data_outputs.hemisphere_img_dict[2].title}}</b></h4>
+                </div>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <p align="center"; style="padding:2%">
+                <a href={{data_outputs.hemisphere_img_dict[3].img_url}}>
+                    <img width=500 src={{data_outputs.hemisphere_img_dict[3].img_url}}>
+                </a>
+                <div class="content_title"; align="center">
+                    <h4><b>{{data_outputs.hemisphere_img_dict[3].title}}</b></h4>
+                </div>
+            </p>            
+        </div>
+    </div>
+ 
+  </div>
+<br>
+<br>
+</body>
+
+</html>
