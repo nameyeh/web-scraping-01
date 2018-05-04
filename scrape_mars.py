@@ -50,7 +50,7 @@ def scrape():
     mars_data = db.mars_data
     db.mars_data.drop()
 
-    output = {}
+    data_outputs = {}
     # having issues with browser, use webdriver instead 
     
     #driver = webdriver.Chrome()
